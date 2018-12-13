@@ -3,11 +3,10 @@
 
 """
 
-    Script to convert a xyz structure file to a Turbomole 
-    coord file with fixed non-hydrogen atoms
+    A script to convert a xyz structure file to a Turbomole 
+    coord file with fixed non-hydrogen atoms.
 
-    Written 2018 by Michael Böhme, www.michael-böhme.de
-
+    written 2018 by Michael Böhme
     https://github.com/micb25/chemtools
 
 """
