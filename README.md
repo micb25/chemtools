@@ -7,3 +7,9 @@ A script to convert a xyz structure file to a Turbomole coord file with fixed no
 Usage:
 `./x2tfix.py pyridine.xyz > coord`
 
+## findcas.py
+A script that finds suitable AOs for active-space selection from a Molcas GUESSORB output file.
+
+Usage:
+`./findcas.py molcas.output [-4d]`
+
