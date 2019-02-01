@@ -2,7 +2,7 @@
 A small collection of scripts that are useful for theoretical chemists.
 
 ## findcas.py
-A script that finds suitable AOs for active-space selection from a Molcas GUESSORB output file.
+A script that finds suitable AOs for active-space selection from a Molcas GUESSORB and RASSCF (experimental) output file.
 
 Usage:
 `./findcas.py molcas.output [-4d]`
