@@ -1,5 +1,5 @@
 # chemtools
-A small collection of scripts that are useful for theoretical chemists.
+A small collection of scripts that might be useful for theoretical chemists and other people.
 
 ## findcas.py
 A script that finds suitable AOs for active-space selection from a Molcas GUESSORB and RASSCF (experimental) output file.
