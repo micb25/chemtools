@@ -3,6 +3,7 @@ A small collection of scripts that might be useful for theoretical chemists and 
 
 ## csfs.py
 A small script that calculates the number of configuration state functions (CSFs), e.g. for CASSCF calculations.
+
 Usage:
 `./csfs.py`
 
@@ -23,4 +24,3 @@ A script to convert a xyz structure file to a Turbomole coord file with fixed no
 
 Usage:
 `./x2tfix.py pyridine.xyz > coord`
-
