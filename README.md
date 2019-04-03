@@ -1,6 +1,11 @@
 # chemtools
 A small collection of scripts that might be useful for theoretical chemists and other people.
 
+## csfs.py
+A small script that calculates the number of configuration state functions (CSFs), e.g. for CASSCF calculations.
+Usage:
+`./csfs.py`
+
 ## findcas.py
 A script that finds suitable AOs for active-space selection from a Molcas GUESSORB and RASSCF (experimental) output file.
 
