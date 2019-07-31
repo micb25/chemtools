@@ -1,3 +1,6 @@
+[![License](https://img.shields.io/github/license/micb25/chemtools.svg)](LICENSE)
+[![Issues](https://img.shields.io/github/issues/micb25/chemtools.svg)](https://github.com/micb25/chemtools/issues)
+
 # chemtools
 A small collection of scripts that might be useful for theoretical chemists and other people.
 
