@@ -5,7 +5,7 @@ A small collection of scripts that might be useful for theoretical chemists and 
 A script that calculates the size of the inactive space for a subsequent CASSCF calculation on the basis of a xyz structure file.
 
 Usage:
-`./calc\_inactive\_space.py structure.xyz`
+`./calc_inactive_space.py structure.xyz`
 
 ## csfs.py
 A small script that calculates the number of configuration state functions (CSFs), e.g. for CASSCF calculations.
