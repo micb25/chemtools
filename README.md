@@ -28,6 +28,12 @@ A python script that finds all atoms within a given distance d of a specific ato
 Usage:
 `./findnearest.py [-n ATOMID] [-d DISTANCE] filename.xyz`
 
+## prep\_xyz\_molcas.py
+A script that prepares a xyz structure file for an OpenMOLCAS input file.
+
+Usage:
+`./prep_xyz_molcas.py structure.xyz`
+
 ## x2tfix.py
 A script to convert a xyz structure file to a Turbomole coord file with fixed non-hydrogen atoms.
 
