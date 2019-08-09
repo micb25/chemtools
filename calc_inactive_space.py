@@ -12,8 +12,7 @@
 
 """
 
-import sys
-import openbabel
+import sys, openbabel
 
 if ( (len(sys.argv) < 2) or (len(sys.argv) > 2) ):
         sys.exit("Usage: %s input.xyz" % ( sys.argv[0] ))
@@ -30,15 +29,10 @@ if ( (rf == False) or (obmol.NumAtoms() < 1) ):
 for atom in openbabel.OBMolAtomIter(obmol):
     nucc += atom.GetAtomicNum()
 
-print("%d atoms found in '%s'" % ( obmol.NumAtoms(), sys.argv[1] ))
-print("")
+print("%d atoms found in '%s'\n" % ( obmol.NumAtoms(), sys.argv[1] ))
 
 try:
     totc = int(input("total charge of the system [0]: ") or "0")
-except (TypeError, ValueError, NameError):
-    sys.exit("invalid input!");
-
-try:
     nele = int(input("number of electrons in active space [7]: ") or "7")
 except (TypeError, ValueError, NameError):
     sys.exit("invalid input!");
@@ -54,5 +48,4 @@ print("")
 if ( ( ( elec - nele ) % 2 == 0 ) and ( ( elec - nele ) / 2 >= 0 ) ):
     print("inactive space:    %8d" % ( ( elec - nele ) / 2 ))
 else:
-    print("there is something weird ...")
-
+    sys.exit("there is something weird ...")
