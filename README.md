@@ -5,9 +5,8 @@
 A small collection of scripts that might be useful for theoretical chemists and other people.
 
 ## Requirements
-[Python](https://www.python.org/)
-
-[OpenBabel](https://www.openbabel.org/)
+* [Python](https://www.python.org/)
+* [Open Babel](http://www.openbabel.org/)
 
 
 ## Programs
