@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 """
@@ -11,36 +11,31 @@
 
 """
 
-import sys
-import openbabel
+import sys, openbabel
 
 ANGTOAU = 0.52917721067
 
 if ( (len(sys.argv) < 2) or (len(sys.argv) > 2) ):
-        print "Usage: %s input.xyz" % ( sys.argv[0] )
-        sys.exit(1)
+    sys.exit("Usage: %s input.xyz" % ( sys.argv[0] ))
 
 obconv = openbabel.OBConversion()
 obconv.SetInFormat('xyz')
 obmol = openbabel.OBMol()
 pte = openbabel.OBElementTable()
-
 rf = obconv.ReadFile(obmol, sys.argv[1])
 
 if ( (rf == False) or (obmol.NumAtoms() < 1) ):
-    print "Error reading xyz structure file!"
-    sys.exit(1);
+    sys.exit("Error reading structure file '%s'!" % ( sys.argv[1] ) )
 
-print "$coord"
+print("$coord")
 
 for atom in openbabel.OBMolAtomIter(obmol):
-    print "%20.14f %21.14f %21.14f %s %s" % ( 
+    print("%20.14f %21.14f %21.14f %s%s" % ( 
                 atom.x() / ANGTOAU, 
                 atom.y() / ANGTOAU, 
                 atom.z() / ANGTOAU, 
                 pte.GetSymbol(atom.GetAtomicNum()).lower(), 
-                ( "f" if atom.GetAtomicNum() != 1 else "" ) 
-            )
+                ( " f" if atom.GetAtomicNum() != 1 else "" ) 
+            ))
 
-print "$end"
-
+print("$end")
