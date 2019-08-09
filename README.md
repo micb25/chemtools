@@ -6,7 +6,9 @@ A small collection of scripts that might be useful for theoretical chemists and 
 
 ## Requirements
 [Python](https://www.python.org/)
+
 [OpenBabel](https://www.openbabel.org/)
+
 
 ## Programs
 ### calc\_inactive\_space.py
