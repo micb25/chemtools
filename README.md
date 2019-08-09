@@ -16,6 +16,12 @@ A small script that calculates the number of configuration state functions (CSFs
 Usage:
 `./csfs.py`
 
+## extract\_susc.py
+A script to extract simulated magnetic susceptibility data from a SINGLE\_ANISO/POLY\_ANISO output file.
+
+Usage:
+`./extract_susc.py poly_aniso.output > susc_sim.dat`
+
 ## findcas.py
 A script that finds suitable AOs for active-space selection from a Molcas GUESSORB and RASSCF (experimental) output file.
 
