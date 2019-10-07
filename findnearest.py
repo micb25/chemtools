@@ -11,10 +11,12 @@ Origin = [0.0, 0.0, 0.0]
 pattern0 = r"^([0-9]*)"
 pattern1 = r"^([A-Za-z]*)[\s]*([0-9\.-]*)[\s]*([0-9\.-]*)[\s]*([0-9\.-]*)[\s]*$"
 
-parser = argparse.ArgumentParser(description='A python script that finds all atoms within a given distance of a specific atom.')
+parser = argparse.ArgumentParser(description='Filters and sorts a molecular XYZ structure file.')
 parser.add_argument('filename', help='XYZ structure file')
 parser.add_argument('-n', dest='AtomID', type=int, default=1, help='sets the atom index')
 parser.add_argument('-d', dest='Distance', type=float, default=2.5, help='sets the maximum distance')
+parser.add_argument('-s', '--sort', dest='Sort', action='store_true', help='enables sorting of atoms')
+parser.add_argument('-i', '--inverse', dest='Inverse', action='store_true', help='enables inverse mode')
 args = parser.parse_args()
 
 args.AtomID -= 1
@@ -64,10 +66,18 @@ for i in range(0, len(Atoms)):
     if ( Atoms[i][1] <= args.Distance ):
         NumInRange += 1
     
-Atoms.sort(key=lambda x: x[1])
+if ( args.Sort == True ):
+    Atoms.sort(key=lambda x: x[1])
 
-print(NumInRange, "\n")
-
-for i in range(0, len(Atoms)):
-    if ( Atoms[i][1] <= args.Distance ):
-        print('{:<4s} {:16.8f} {:16.8f} {:16.8f}'.format( Atoms[i][2], Atoms[i][3], Atoms[i][4], Atoms[i][5]))
+if ( args.Inverse == False ):
+    print(NumInRange, "\n")
+    
+    for i in range(0, len(Atoms)):
+        if ( Atoms[i][1] <= args.Distance ):
+            print('{:<4s} {:16.8f} {:16.8f} {:16.8f}'.format( Atoms[i][2], Atoms[i][3], Atoms[i][4], Atoms[i][5]))        
+else:
+    print(NumAtoms - NumInRange, "\n")
+    
+    for i in range(0, len(Atoms)):
+        if ( Atoms[i][1] > args.Distance ):
+            print('{:<4s} {:16.8f} {:16.8f} {:16.8f}'.format( Atoms[i][2], Atoms[i][3], Atoms[i][4], Atoms[i][5]))
