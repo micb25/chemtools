@@ -123,8 +123,11 @@ while i < len(lines) - 1:
                                     i -= 1
                                 break
 
-                            cl = rawlines[i][15:]
-                            corbs = ([cl[k:k+24] for k in range(0, len(cl), 24)])
+                            cl = rawlines[i][15:].strip()
+                            if ( isRASSCF == False ):
+                                corbs = ([cl[k:k+24] for k in range(0, len(cl), 24)])
+                            else:
+                                corbs = ([cl[k:k+28] for k in range(0, len(cl), 28)])
                             ca = 0
                             for corb in corbs:
                                 if ( corb.strip() != '' ):
