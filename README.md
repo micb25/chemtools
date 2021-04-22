@@ -40,6 +40,13 @@ A python script that finds all atoms within a given distance d of a specific ato
 Usage:
 `./findnearest.py [-n ATOMID] [-d DISTANCE] filename.xyz`
 
+### grep_CFPs.py
+
+A python script that extracts the ligand-field parameters from a SINGLE_ANISO calculation.
+
+Usage:
+`./grep_CFPs.py SINGLE_ANISO.output [-m]`
+
 ### prep\_xyz\_molcas.py
 A script that prepares a xyz structure file for an OpenMOLCAS input file.
 
