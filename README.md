@@ -53,6 +53,12 @@ A script that prepares a xyz structure file for an OpenMOLCAS input file.
 Usage:
 `./prep_xyz_molcas.py structure.xyz`
 
+### screw_me.py
+A script that runs TURBOMOLE's `screwer` to distort a molecule along a certain mode and displays the new coordinates.
+
+Usage:
+`./screw_me.py [-h] [-a] [-d DIRECTORY] [-f FACTOR] [-t TEMPERATURE] [-v] mode_number`
+
 ### x2tfix.py
 A script to convert a xyz structure file to a Turbomole coord file with fixed non-hydrogen atoms.
 
