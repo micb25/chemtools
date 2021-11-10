@@ -136,7 +136,7 @@ for i in range(0, len(atoms_new)):
     for c in range(1, 4):
         atoms_new[i][c] = atoms_old[i][c] + atoms_new_scaled[i][c]
         
-display_atoms(atoms_new, comment="mode={},T={},f={:.2f}".format(mode, args.Temperature, args.Factor))
+display_atoms(atoms_new, comment="mode={},T={},f={:.3f}".format(mode, args.Temperature, args.Factor))
     
 # finally, clean up
 if args.verbose:
