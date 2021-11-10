@@ -25,7 +25,6 @@ def display_atoms(arr, comment=""):
 
 parser = argparse.ArgumentParser(description='Filters and sorts a molecular XYZ structure file.')
 parser.add_argument('mode_number', type=int, help='mode number')
-parser.add_argument('-a', '--au', dest='AtomicUnits', action='store_true', help='calculates position data in atomic units')
 parser.add_argument('-d', dest='Directory', type=str, default="", help='sets the working directory')
 parser.add_argument('-f', dest='Factor', type=float, default=1.0, help='sets the scaling factor')
 parser.add_argument('-t', dest='Temperature', type=int, default=4, help='sets the temperature for TURBOMOLE''s screwer')
