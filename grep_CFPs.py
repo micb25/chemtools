@@ -95,23 +95,21 @@ if matlab_output:
     output += "];\nSys.B6 = [ "
     for k, q, val in CFP6:
         output += "{:.12e}".format(val) + " ";
-    output += "];\n"
         
     if higher_order:
         output += "];\nSys.B8 = [ "
         for k, q, val in CFP8:
             output += "{:.12e}".format(val) + " ";
-        output += "];\n"
         
         output += "];\nSys.B10 = [ "
         for k, q, val in CFP10:
             output += "{:.12e}".format(val) + " ";
-        output += "];\n"
         
         output += "];\nSys.B12 = [ "
         for k, q, val in CFP12:
             output += "{:.12e}".format(val) + " ";
-        output += "];\n"
+            
+    output += "];\n"
         
 else:
     # merge CFPs
