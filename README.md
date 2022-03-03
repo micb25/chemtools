@@ -45,7 +45,7 @@ Usage:
 A python script that extracts the ligand-field parameters from a SINGLE_ANISO calculation.
 
 Usage:
-`./grep_CFPs.py SINGLE_ANISO.output [-m]`
+`./grep_CFPs.py SINGLE_ANISO.output [-m] [-e]`
 
 ### prep\_xyz\_molcas.py
 A script that prepares a xyz structure file for an OpenMOLCAS input file.
