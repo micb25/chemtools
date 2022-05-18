@@ -14,6 +14,7 @@ parser.add_argument('CubeFileA', metavar='file1.cube', help='The first .cube fil
 parser.add_argument('CubeFileB', metavar='file2.cube', help='The second .cube file')
 parser.add_argument('CubeFileC', metavar='output.cube', help='The name of the output file')
 parser.add_argument('-a', '--add', dest='Add', action='store_true', help='sums up the grid data')
+parser.add_argument('-m', '--multiply', dest='Multiply', action='store_true', help='multiplies two grids')
 parser.add_argument('-v', '--verbose', dest='Verbose', action='store_true', help='shows additional data')
 args = parser.parse_args()
 
@@ -22,6 +23,10 @@ if not os.path.isfile(args.CubeFileA):
     
 if not os.path.isfile(args.CubeFileB):
     sys.exit("Error! File '%s' not found!" % ( args.CubeFileB ))
+    
+# check for invalid
+if args.Add and args.Multiply:
+    sys.exit("Error! Options add and multiply are incompatible!")
 
 # load first cube file
 try:
@@ -94,6 +99,8 @@ for i in range(6 + NumAtoms, len(linesA)):
         
         if ( args.Add == True ):
             flC = flA + flB
+        if ( args.Multiply == True ):
+            flC = flA * flB
         else:
             flC = flA - flB
         fC.write("%13.5E" % (flC) )

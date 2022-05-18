@@ -22,6 +22,12 @@ A small script that calculates the number of configuration state functions (CSFs
 Usage:
 `./csfs.py`
 
+### cube_util.py
+A script to add, substract, and multiply cube grid data.
+
+Usage:
+`./cube_util.py [-h] [-a] [-m] [-v] file1.cube file2.cube output.cube`
+
 ### extract\_susc.py
 A script to extract simulated magnetic susceptibility data from a SINGLE\_ANISO/POLY\_ANISO output file.
 
