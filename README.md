@@ -53,6 +53,13 @@ A python script that extracts the ligand-field parameters from a SINGLE_ANISO ca
 Usage:
 `./grep_CFPs.py SINGLE_ANISO.output [-m] [-e]`
 
+### npa_util.py
+
+A script that extracts NPA charges out from a TURBOMOLE log file.
+
+Usage:
+`./npa_util.py [-a] [-s] tm.log ATOMS`
+
 ### prep\_xyz\_molcas.py
 A script that prepares a xyz structure file for an OpenMOLCAS input file.
 
