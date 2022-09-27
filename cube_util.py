@@ -99,7 +99,7 @@ for i in range(6 + NumAtoms, len(linesA)):
         
         if ( args.Add == True ):
             flC = flA + flB
-        if ( args.Multiply == True ):
+        elif ( args.Multiply == True ):
             flC = flA * flB
         else:
             flC = flA - flB
