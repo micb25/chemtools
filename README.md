@@ -22,6 +22,12 @@ A small script that calculates the number of configuration state functions (CSFs
 Usage:
 `./csfs.py`
 
+### cube_scale.py
+A small script to scale cube grid data by a constant factor.
+
+Usage:
+`./cube_scale.py [-h] factor input.cube output.cube`
+
 ### cube_util.py
 A script to add, substract, and multiply cube grid data.
 
