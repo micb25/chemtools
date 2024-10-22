@@ -12,7 +12,8 @@
 
 """
 
-import sys, openbabel
+import sys
+from openbabel import openbabel
 
 if ( (len(sys.argv) < 2) or (len(sys.argv) > 2) ):
         sys.exit("Usage: %s input.xyz" % ( sys.argv[0] ))

@@ -11,7 +11,8 @@
 
 """
 
-import sys, openbabel
+import sys
+from openbabel import openbabel
 
 ANGTOAU = 0.52917721067
 
@@ -21,7 +22,6 @@ if ( (len(sys.argv) < 2) or (len(sys.argv) > 2) ):
 obconv = openbabel.OBConversion()
 obconv.SetInFormat('xyz')
 obmol = openbabel.OBMol()
-pte = openbabel.OBElementTable()
 rf = obconv.ReadFile(obmol, sys.argv[1])
 
 if ( (rf == False) or (obmol.NumAtoms() < 1) ):
@@ -34,7 +34,7 @@ for atom in openbabel.OBMolAtomIter(obmol):
                 atom.x() / ANGTOAU, 
                 atom.y() / ANGTOAU, 
                 atom.z() / ANGTOAU, 
-                pte.GetSymbol(atom.GetAtomicNum()).lower(), 
+                openbabel.GetSymbol(atom.GetAtomicNum()).lower(), 
                 ( " f" if atom.GetAtomicNum() != 1 else "" ) 
             ))
 
