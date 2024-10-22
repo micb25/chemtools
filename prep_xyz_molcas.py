@@ -11,12 +11,16 @@
 
 """
 
-import sys, openbabel
+import sys
+from openbabel import openbabel
 
 if ( (len(sys.argv) < 2) or (len(sys.argv) > 2) ):
         sys.exit("Usage: %s input.xyz" % ( sys.argv[0] ))
 
-pte = openbabel.OBElementTable()
+openbabel.OBMessageHandler().SetOutputLevel(0)
+# Unfortunately, this doesn't work and OB 3.x still shows warnings
+# and openbabel.OBMessageHandler().GetOutputLevel() returns 1
+
 obconv = openbabel.OBConversion()
 obconv.SetInFormat('xyz')
 obmol = openbabel.OBMol()
@@ -26,9 +30,9 @@ if ( (f == False) or (obmol.NumAtoms() < 1) ):
     sys.exit("error reading xyz structure file!")
 
 for atom in openbabel.OBMolAtomIter(obmol):
-    if ( len(pte.GetSymbol(atom.GetAtomicNum())) == 1):
+    if ( len(openbabel.GetSymbol(atom.GetAtomicNum())) == 1):
         print("%s%-4i %16.8f %16.8f %16.8f   /Angstrom" % ( 
-                    pte.GetSymbol(atom.GetAtomicNum()),
+                    openbabel.GetSymbol(atom.GetAtomicNum()),
                     atom.GetIndex() + 1,
                     atom.GetX(),
                     atom.GetY(),
@@ -37,7 +41,7 @@ for atom in openbabel.OBMolAtomIter(obmol):
             )
     else:
         print("%s%-3i %16.8f %16.8f %16.8f   /Angstrom" % ( 
-                    pte.GetSymbol(atom.GetAtomicNum()),
+                    openbabel.GetSymbol(atom.GetAtomicNum()),
                     atom.GetIndex() + 1,
                     atom.GetX(),
                     atom.GetY(),
