@@ -33,8 +33,10 @@ for atom in openbabel.OBMolAtomIter(obmol):
 print("%d atoms found in '%s'\n" % ( obmol.NumAtoms(), sys.argv[1] ))
 
 try:
-    totc = int(input("total charge of the system [0]: ") or "0")
-    nele = int(input("number of electrons in active space [7]: ") or "7")
+    totc = int(input("     total charge of the system [0]: ") or "0")
+    nele = int(input(" # of electrons in active space [7]: ") or "7")
+    froz = int(input("                frozen orbitals [0]: ") or "0")
+    ras2 = int(input("                  RAS2 orbitals [5]: ") or "5")
 except (TypeError, ValueError, NameError):
     sys.exit("invalid input!");
 
@@ -47,6 +49,12 @@ print("total charge:      %8d" % ( nucc - elec ))
 print("")
 
 if ( ( ( elec - nele ) % 2 == 0 ) and ( ( elec - nele ) / 2 >= 0 ) ):
-    print("inactive space:    %8d" % ( ( elec - nele ) / 2 ))
+    inac = ( elec - nele ) / 2
+    inac -= froz
+    print("# OpenMolcas RASSCF input:\n")
+    print("NACTEL\n%2d 0 0" % ( nele ))
+    print("FROZEN\n%2d" % ( froz ))
+    print("INACTIVE\n%3d" % ( inac ))
+    print("RAS2\n%2d" % ( ras2 ))
 else:
     sys.exit("there is something weird ...")
